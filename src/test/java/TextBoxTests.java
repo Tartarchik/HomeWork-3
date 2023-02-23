@@ -19,6 +19,8 @@ public class TextBoxTests {
     @Test
     void fillFormTest() {
         open("https://demoqa.com/automation-practice-form");
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
 
         $("#firstName").setValue("Qa");
         $("#lastName").setValue("Guru");
