@@ -2,7 +2,6 @@ package page;
 
 import com.codeborne.selenide.SelenideElement;
 import page.components.CalendarComponent;
-import page.components.RegistrastionModal;
 import tests.TestBase;
 
 import static com.codeborne.selenide.Selectors.byText;
@@ -10,18 +9,17 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage extends TestBase {
     CalendarComponent calendarComponent = new CalendarComponent();
-    RegistrastionModal registrastionModal = new RegistrastionModal();
-    private SelenideElement firstName = $("#firstName");
-    private SelenideElement lastName = $("#lastName");
-    private SelenideElement userEmail = $("#userEmail");
-    private SelenideElement genterWrapper = $("#genterWrapper");
-    private SelenideElement userNumber = $("#userNumber");
-    private SelenideElement subject = $("#subjectsInput");
-    private SelenideElement hobbies = $("#hobbiesWrapper");
-    private SelenideElement picture = $("#uploadPicture");
-    private SelenideElement address = $("#currentAddress");
-    private SelenideElement state = $("#state");
-    private SelenideElement city = $("#city");
+    final private SelenideElement firstName = $("#firstName");
+    final private SelenideElement lastName = $("#lastName");
+    final private SelenideElement userEmail = $("#userEmail");
+    final private SelenideElement genterWrapper = $("#genterWrapper");
+    final private SelenideElement userNumber = $("#userNumber");
+    final private SelenideElement subject = $("#subjectsInput");
+    final private SelenideElement hobbies = $("#hobbiesWrapper");
+    final private SelenideElement picture = $("#uploadPicture");
+    final private SelenideElement address = $("#currentAddress");
+    final private SelenideElement state = $("#state");
+    final private SelenideElement city = $("#city");
 
     private SelenideElement birthDay = $("#dateOfBirthInput");
 
@@ -30,6 +28,13 @@ public class RegistrationPage extends TestBase {
 
     public RegistrationPage openPage() {
         open("https://demoqa.com/automation-practice-form");
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
+
+        return this;
+    }
+
+    public RegistrationPage closeBanner() {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
 
@@ -60,7 +65,7 @@ public class RegistrationPage extends TestBase {
         return this;
     }
 
-    public RegistrationPage setuserNumber(String value) {
+    public RegistrationPage setUserNumber(String value) {
         userNumber.setValue(value);
 
         return this;
@@ -72,7 +77,7 @@ public class RegistrationPage extends TestBase {
         return this;
     }
 
-    public RegistrationPage setHobbies(String value) {
+    public RegistrationPage setHobby(String value) {
         hobbies.$(byText(value)).click();
 
         return this;
@@ -117,19 +122,7 @@ public class RegistrationPage extends TestBase {
         return this;
     }
 
-    public RegistrationPage verifModal(String value) {
-        registrastionModal.verifModal(value);
-
-        return this;
-    }
-
-    public RegistrationPage verifRegResultModal(String key, String value) {
-        registrastionModal.regResultModal(key, value);
-
-        return this;
-    }
-
-    public void clickClose () {
+    public void clickClose() {
         closeButton.click();
     }
 

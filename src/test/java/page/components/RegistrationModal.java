@@ -4,13 +4,16 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
-public class RegistrastionModal {
-    public void verifModal(String value){
+public class RegistrationModal {
+    public RegistrationModal verifyModal(String value){
         $(".modal-open").shouldHave(text(value));
+
+        return this;
     }
-    public void regResultModal(String key , String value){
+    public RegistrationModal verifyModalResult(String key , String value){
         $(".table-responsive").$(byText(key)).parent()
                 .shouldHave(text(value));
+        return this;
     }
 
 }
