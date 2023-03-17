@@ -9,14 +9,16 @@ import page.components.RegistrationModal;
 public class RegistrationFormTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
     RegistrationModal registrationModal = new RegistrationModal();
+    final private String userFirstName = "Qa";
+    final private String userLastName = "Guru";
 
 
     @Test
     void registrationFormTest() {
         registrationPage.openPage()
                 .closeBanner()
-                .setFirstname("Qa")
-                .setLastname("Guru")
+                .setFirstname(userFirstName)
+                .setLastname(userLastName)
                 .setUserEmail("qagutu@mail.com")
                 .setGender("Female")
                 .setUserNumber("9891111111")
