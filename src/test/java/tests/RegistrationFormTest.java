@@ -37,6 +37,7 @@ public class RegistrationFormTest extends TestBase {
                 .verifyModalResult("Date of Birth", "12 " + "April" + "," + "2000")
                 .verifyModalResult("Subjects", "Maths")
                 .verifyModalResult("Hobbies", "Sports")
+                .verifyModalResult("Picture", "Leo.jpg")
                 .verifyModalResult("Address", "Street")
                 .verifyModalResult("State and City", "Uttar Pradesh " + "Agra");
 

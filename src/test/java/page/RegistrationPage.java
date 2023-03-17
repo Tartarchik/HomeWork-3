@@ -12,7 +12,7 @@ public class RegistrationPage extends TestBase {
     final private SelenideElement firstName = $("#firstName");
     final private SelenideElement lastName = $("#lastName");
     final private SelenideElement userEmail = $("#userEmail");
-    final private SelenideElement genterWrapper = $("#genterWrapper");
+    final private SelenideElement genderWrapper = $("#genterWrapper");
     final private SelenideElement userNumber = $("#userNumber");
     final private SelenideElement subject = $("#subjectsInput");
     final private SelenideElement hobbies = $("#hobbiesWrapper");
@@ -28,8 +28,6 @@ public class RegistrationPage extends TestBase {
 
     public RegistrationPage openPage() {
         open("https://demoqa.com/automation-practice-form");
-        executeJavaScript("$('#fixedban').remove()");
-        executeJavaScript("$('footer').remove()");
 
         return this;
     }
@@ -60,7 +58,7 @@ public class RegistrationPage extends TestBase {
     }
 
     public RegistrationPage setGender(String value) {
-        genterWrapper.$(byText(value)).click();
+        genderWrapper.$(byText(value)).click();
 
         return this;
     }
@@ -116,10 +114,8 @@ public class RegistrationPage extends TestBase {
         return this;
     }
 
-    public RegistrationPage submit() {
-        submit.click();
-
-        return this;
+    public void submit() {
+        submit.click();;
     }
 
     public void clickClose() {
