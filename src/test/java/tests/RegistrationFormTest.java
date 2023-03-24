@@ -5,12 +5,12 @@ import org.junit.jupiter.api.Test;
 import page.RegistrationPage;
 import page.components.RegistrationModal;
 
+import static tests.TestData.*;
+
 
 public class RegistrationFormTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
     RegistrationModal registrationModal = new RegistrationModal();
-    final private String userFirstName = "Qa";
-    final private String userLastName = "Guru";
 
 
     @Test
@@ -19,29 +19,29 @@ public class RegistrationFormTest extends TestBase {
                 .closeBanner()
                 .setFirstname(userFirstName)
                 .setLastname(userLastName)
-                .setUserEmail("qagutu@mail.com")
-                .setGender("Female")
-                .setUserNumber("9891111111")
-                .setBirthDate("3", "2000", "12")
-                .setSubject("Maths")
-                .setHobby("Sports")
-                .setPicture("pictures/Leo.jpg")
-                .setAddress("Street")
-                .setState("Uttar Pradesh")
-                .setCity("Agra")
+                .setUserEmail(userEmail)
+                .setGender(gender)
+                .setUserNumber(phone)
+                .setBirthDate(month, year, day)
+                .setSubject(subject)
+                .setHobby(hobby)
+                .setPicture(picture)
+                .setAddress(adress)
+                .setState(state)
+                .setCity(city)
                 .submit();
 
         registrationModal.verifyModal("Thanks for submitting the form")
-                .verifyModalResult("Student Name", "Qa " + "Guru")
-                .verifyModalResult("Student Email", "qagutu@mail.com")
-                .verifyModalResult("Gender", "Female")
-                .verifyModalResult("Mobile", "9891111111")
-                .verifyModalResult("Date of Birth", "12 " + "April" + "," + "2000")
-                .verifyModalResult("Subjects", "Maths")
-                .verifyModalResult("Hobbies", "Sports")
-                .verifyModalResult("Picture", "Leo.jpg")
-                .verifyModalResult("Address", "Street")
-                .verifyModalResult("State and City", "Uttar Pradesh " + "Agra");
+                .verifyModalResult("Student Name", userFirstName + " " + userLastName)
+                .verifyModalResult("Student Email", userEmail)
+                .verifyModalResult("Gender", gender)
+                .verifyModalResult("Mobile", phone)
+                .verifyModalResult("Date of Birth", day + " " + month + "," + year)
+                .verifyModalResult("Subjects", subject)
+                .verifyModalResult("Hobbies", hobby)
+                .verifyModalResult("Picture", picture)
+                .verifyModalResult("Address", adress)
+                .verifyModalResult("State and City", state + " " + city);
 
         registrationPage.clickClose();
 
