@@ -32,7 +32,7 @@ public class TestData {
     public static Date strDate = fakerEn.date().birthday();
     public static String month = new SimpleDateFormat("MMMM", Locale.ENGLISH).format(strDate);
     public static String year = new SimpleDateFormat("yyyy", Locale.ENGLISH).format(strDate);
-    public static String day = new SimpleDateFormat("d", Locale.ENGLISH).format(strDate);
+    public static String day = new SimpleDateFormat("dd", Locale.ENGLISH).format(strDate);
     public static String state = fakerEn.options().option("NCR", "Uttar Pradesh", "Haryana", "Rajasthan");
     public static String city = city();
 
