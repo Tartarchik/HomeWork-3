@@ -23,7 +23,7 @@ allure {
 repositories {
     mavenCentral()
 }
-compileJava{
+compileJava {
     options.encoding = 'UTF-8'
 }
 
@@ -47,4 +47,9 @@ dependencies {
 test {
     useJUnitPlatform()
     systemProperties(System.getProperties())
+}
+task simple_test(type: Test){
+    useJUnitPlatform(){
+        includeTags("simple")
+    }
 }
