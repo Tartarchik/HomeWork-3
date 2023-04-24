@@ -1,11 +1,22 @@
 package page;
 
 import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.WebDriverRunner;
+import com.codeborne.selenide.commands.TakeScreenshot;
+import io.qameta.allure.Allure;
+import io.qameta.allure.Attachment;
+import io.qameta.allure.selenide.LogType;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import page.components.CalendarComponent;
 import tests.TestBase;
 
+import java.sql.DriverManager;
+
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static io.qameta.allure.Allure.attachment;
 
 public class RegistrationPage extends TestBase {
     CalendarComponent calendarComponent = new CalendarComponent();
