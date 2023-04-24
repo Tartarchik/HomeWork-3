@@ -15,7 +15,7 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-        //browserName: 'Firefox';
+
         Configuration.pageLoadTimeout = 100000;
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
