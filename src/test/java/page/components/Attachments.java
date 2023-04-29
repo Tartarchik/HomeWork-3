@@ -1,14 +1,10 @@
 package page.components;
 
 import com.codeborne.selenide.Selenide;
-import io.qameta.allure.Allure;
+import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import io.qameta.allure.Attachment;
 
-import java.io.ByteArrayInputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
